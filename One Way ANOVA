@@ -1,0 +1,12 @@
+# One Way Anova of chickwts
+attach(chickwts)
+anova_chickwts <- aov(weight~feed, data=chickwts)
+summary(anova_chickwts)
+
+# Post-hoc Test (Tukey Test)
+TukeyHSD(anova_chickwts)
+
+# Plot
+plot(anova_chickwts)
+par(mfrow=c(2,2))
+plot(anova_chickwts)
